@@ -36,7 +36,8 @@ Figure 1.1 shows a strong upward trend, as expected, so differencing will have t
 To assess seasonality and determine the appropriate ARIMA model parameters (p, d, q), the data was log-transformed and differenced to achieve stationarity. This was confirmed by an Augmented Dickey-Fuller test, which returned a near-zero p-value, indicating strong evidence of stationarity. ACF and PACF plots were then generated below for both models to guide the selection of model order and identify any seasonal patterns.
 
 Figure 2.2 – Monthly High data
-<img width="549" height="293" alt="image" src="https://github.com/user-attachments/assets/4960710d-b445-463c-880c-1f388e9514c9" />        <img width="538" height="308" alt="image" src="https://github.com/user-attachments/assets/3aa58278-eb44-42ff-ae4b-7caad19190d4" />
+
+<img width="549" height="293" alt="image" src="https://github.com/user-attachments/assets/4960710d-b445-463c-880c-1f388e9514c9" /><img width="538" height="308" alt="image" src="https://github.com/user-attachments/assets/3aa58278-eb44-42ff-ae4b-7caad19190d4" />
 
 The two figures indicate no seasonality, likely ruling out the potential for seasonality to be used. Despite the studied seasonality in academic research, it is not prominent enough within the data to warrant using a SARIMA model. The plots also suggest order (1,1) for the (p,q) components.
 
