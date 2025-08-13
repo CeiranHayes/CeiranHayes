@@ -28,7 +28,7 @@ To begin the analysis, a visual of the S&P 500 index monthly Lows/Highs were plo
 
 Figure 1.1
 
-<img width="1339" height="641" alt="image" src="https://github.com/user-attachments/assets/6feb92ba-e67b-4e20-bd75-81e246e1cc53" />
+
 
 Figure 1.1 shows a strong upward trend, as expected, so differencing will have to be applied to ensure the data is stationary. With the periods of volatility from economic downturns such as the 2008 financial crisis and Covid, it makes it difficult to spot any seasonality visually. In absolute terms the data also shows larger variances as time goes on, suggesting a log transform will also have to be applied.
 
@@ -72,13 +72,8 @@ The grid search approach identified an optimal order for the ‘Low’ model tha
 
 Figure 2.5 – Forecast Vs Actuals Plot.
 
-A graph of a graph
-
-AI-generated content may be incorrect.
-
- 
-
 At a high level, to understand the accuracy common error metrics were used. The results are shown in figure 2.5 below.
+<img width="1339" height="641" alt="image" src="https://github.com/user-attachments/assets/6feb92ba-e67b-4e20-bd75-81e246e1cc53" />
 
 Figure 2.6 – Error summary.
 
