@@ -8,6 +8,9 @@ Can a ARIMA model help improve timing of entry points into the S&P 500 and gener
 
 Typically, when people invest into the index, they will invest a set amount at the same time each month. This strategy is known as Dollar cost averaging (DCA). The idea of DCA is to reduce emotional decision making and smooth out volatility in the long run. Reference. This project will seek to explore whether using an ARIMA model to forecast S&P 500 data can be used as a baseline for timing investments throughout the month. This helps maintain the emotional decision-making aspect.
 
+##Data Source
+As the data being worked with is finanical data, it will be sourced from the 'yfinance' library within Python
+
 ## Investment Methodology:
 
 Each month, two ARIMA models forecast a high and low price for the next month using a rolling window approach. The strategy monitors daily closing prices and invests 75% of the monthly contribution on the first day the price is closer to the predicted low than the predicted high. The remaining 25% is invested at month-end. If no such day occurs, 100% is invested at the end of the month.
