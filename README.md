@@ -22,7 +22,7 @@ To further evaluate ARIMA’s potential, alternative investment strategies can b
 
 # Data Visuals and Analysis
 
-##Visualising the Index
+## Visualising the Index
 To begin the analysis, a visual of the S&P 500 index monthly Lows/Highs were plotted on a line plot. This is to initially see overall trends, volatility and any seasonality. The visual is shown in figure 1.1 below.
 
  
@@ -33,7 +33,7 @@ Figure 1.1
 
 Figure 1.1 shows a strong upward trend, as expected, so differencing will have to be applied to ensure the data is stationary. With the periods of volatility from economic downturns such as the 2008 financial crisis and Covid, it makes it difficult to spot any seasonality visually. In absolute terms the data also shows larger variances as time goes on, suggesting a log transform will also have to be applied.
 
-##PACF and ACF Plots
+## PACF and ACF Plots
 To assess seasonality and determine the appropriate ARIMA model parameters (p, d, q), the data was log-transformed and differenced to achieve stationarity. This was confirmed by an Augmented Dickey-Fuller test, which returned a near-zero p-value, indicating strong evidence of stationarity. ACF and PACF plots were then generated below for both models to guide the selection of model order and identify any seasonal patterns.
 
 
@@ -52,7 +52,7 @@ Figure 2.3 – Monthly Low data
 
 When identifying the most optimal parameters, a grid search approach was used. This data was log transformed and each combination of (p,d,q) was used, being assessed by Akaike information criterion. The model with the lowest AIC was picked and resulted in the following parameters for each model showed in figure 2.4 below
 
-##Order Selection 
+## Order Selection 
 Figure 2.4 – AIC and Parameters.
 
  
@@ -62,13 +62,13 @@ Figure 2.4 – AIC and Parameters.
 
 The grid search approach identified an optimal order for the ‘Low’ model that aligned with patterns observed in the ACF and PACF plots, yielding an AIC of -345.5, indicating strong model fit. For the ‘High’ model, the selected order differed from PACF suggestions but was chosen due to its lower AIC, prioritising statistical performance over visual diagnostics. Forecasts are shown in Figure 2.5. The use of AIC is considered best practice in time series model selection, as it balances model fit with complexity and helps avoid overfitting by penalising excessive parameters (Bevans, 2020).
 
-##Visualising Results
+## Visualising Results
 Figure 2.5 – Forecast Vs Actuals Plot.
 
 At a high level, to understand the accuracy common error metrics were used. The results are shown in figure 2.5 below.
 <img width="1339" height="641" alt="image" src="https://github.com/user-attachments/assets/6feb92ba-e67b-4e20-bd75-81e246e1cc53" />
 
-##Understanding the accuracy and results
+## Understanding the accuracy and results
 Figure 2.6 – Error summary.
 
 <img width="380" height="73" alt="image" src="https://github.com/user-attachments/assets/a1f4dbd6-bafd-449d-a96f-4d0d8305c42d" />
