@@ -28,30 +28,23 @@ To begin the analysis, a visual of the S&P 500 index monthly Lows/Highs were plo
 
 Figure 1.1
 
+<img width="693" height="503" alt="image" src="https://github.com/user-attachments/assets/35bc9218-9061-4769-a66e-58e6256f0e97" />
 
 
 Figure 1.1 shows a strong upward trend, as expected, so differencing will have to be applied to ensure the data is stationary. With the periods of volatility from economic downturns such as the 2008 financial crisis and Covid, it makes it difficult to spot any seasonality visually. In absolute terms the data also shows larger variances as time goes on, suggesting a log transform will also have to be applied.
 
 To assess seasonality and determine the appropriate ARIMA model parameters (p, d, q), the data was log-transformed and differenced to achieve stationarity. This was confirmed by an Augmented Dickey-Fuller test, which returned a near-zero p-value, indicating strong evidence of stationarity. ACF and PACF plots were then generated below for both models to guide the selection of model order and identify any seasonal patterns.
 
-A graph with blue dots and numbers
-
-AI-generated content may be incorrect.A graph of a function
-
-AI-generated content may be incorrect.Figure 2.2 – Monthly High data
+Figure 2.2 – Monthly High data
+<img width="549" height="293" alt="image" src="https://github.com/user-attachments/assets/4960710d-b445-463c-880c-1f388e9514c9" />        <img width="538" height="308" alt="image" src="https://github.com/user-attachments/assets/3aa58278-eb44-42ff-ae4b-7caad19190d4" />
 
 The two figures indicate no seasonality, likely ruling out the potential for seasonality to be used. Despite the studied seasonality in academic research, it is not prominent enough within the data to warrant using a SARIMA model. The plots also suggest order (1,1) for the (p,q) components.
 
 The low data showed similar results in terms of seasonality but indicated order of (0,0) for the (p,q) components of the model.
 
-A graph with blue dots and numbers
+Figure 2.3 – Monthly Low data
 
-AI-generated content may be incorrect.Figure 2.3 – Monthly Low data
-
-A graph with blue dots and numbers
-
-AI-generated content may be incorrect.
-
+<img width="554" height="350" alt="image" src="https://github.com/user-attachments/assets/ec4531e8-76a3-4ee5-98aa-d76ebb5e2444" />    <img width="592" height="303" alt="image" src="https://github.com/user-attachments/assets/e8683f46-9975-4914-b665-64c719dc2c9a" />
  
 
 When identifying the most optimal parameters, a grid search approach was used. This data was log transformed and each combination of (p,d,q) was used, being assessed by Akaike information criterion. The model with the lowest AIC was picked and resulted in the following parameters for each model showed in figure 2.4 below
@@ -59,12 +52,7 @@ When identifying the most optimal parameters, a grid search approach was used. T
 Figure 2.4 – AIC and Parameters.
 
  
-
-A screenshot of a computer screen
-
-AI-generated content may be incorrect.
-
- 
+<img width="557" height="85" alt="image" src="https://github.com/user-attachments/assets/c3253b2e-70b2-48ec-ac23-8c95a70ca457" />
 
  
 
@@ -77,11 +65,8 @@ At a high level, to understand the accuracy common error metrics were used. The 
 
 Figure 2.6 – Error summary.
 
-A white rectangular object with black text
+<img width="380" height="73" alt="image" src="https://github.com/user-attachments/assets/a1f4dbd6-bafd-449d-a96f-4d0d8305c42d" />
 
-AI-generated content may be incorrect.
-
- 
 
  
 Given the nature of the index, where price points movements increase over time, MAPE is used as the primary accuracy metric. The ‘Monthly Low’ model shows a higher error rate (3.63%) compared to the ‘Monthly High’ model (2%), largely due to sudden market crashes like Covid. These events tend to impact low values more sharply, whereas high values remain more stable. For example, in March 2020, the error was 30% for the low model versus 9% for the high. Despite this, the forecasts serve as bounds for investment decisions, so the impact of such errors is limited.
@@ -89,9 +74,8 @@ Given the nature of the index, where price points movements increase over time, 
  
 Further metrics were built such as the mean difference and the % of months where a cheaper price was observed compared to the DCA strategy. Results shown below in figure 2.7.
 
-A screenshot of a computer
-
-AI-generated content may be incorrect.Figure 2.7 – Error summary.
+Figure 2.7 – Error summary.
+<img width="903" height="117" alt="image" src="https://github.com/user-attachments/assets/4b9264c9-42dd-4386-a981-11cb32a95133" />
 
 At an average level, the ARIMA based strategy got entry points 15.99 below the DCA strategy with 52.4% of the months being a cheaper price point.
 
