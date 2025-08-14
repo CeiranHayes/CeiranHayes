@@ -2,7 +2,7 @@
 
 Can a ARIMA model help improve timing of entry points into the S&P 500 and generate higher returns than a traditional Dollar Cost Averaging strategy?
 
-Click here to view the code used: [View SARIMA Notebook](https://CeiranHayes.github.io/CeiranHayes/ARIMAs%26p500.html)
+You can view the SARIMA code [here](https://CeiranHayes.github.io/CeiranHayes/ARIMACODE.html).
 
 # Executive summary
 
